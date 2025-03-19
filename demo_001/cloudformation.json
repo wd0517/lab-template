@@ -1,0 +1,22 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters": {
+        "OwnerName": {
+            "Type": "String"
+        },
+        "OwnerEmail": {
+            "Type": "String"
+        },
+        "AZIdx": {
+            "Type": "Number",
+            "Default": 0,
+            "MinValue": 0,
+            "MaxValue": 2,
+            "Description": "Resources from which AZ"
+        }
+    },
+    "Mappings": {
+    },
+    "Resources": {
+    }
+}

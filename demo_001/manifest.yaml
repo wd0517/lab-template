@@ -1,0 +1,61 @@
+name: "demo_001"
+description: "demo_001"
+version: "0.0.1"
+authors:
+  - Writer1
+  - Writer2
+credits_per_minute: 10
+tags:
+  - TiDB Serverless
+  - GenAI
+regions:
+  - us-east-1
+  - us-west-2
+  - eu-central-1
+  - ap-northeast-1
+languages:
+  - en
+  - zh
+  - ja
+
+
+prerequisites:
+  - name: "serverless-cluster"
+    type: "TiDBServerlessCluster"
+  - name: "aws-cloudformation-stack"
+    type: "AWSCloudFormationStack"
+
+bootstrap:
+  - name: "install mysql client"
+    type: "ShellScript"
+    target:
+      - monitor-1
+      - monitor-2
+    script: |
+      sudo apt-get update
+      sudo apt-get install mysql-client
+      sudo apt-get install mysql-client-core-8.0
+
+  - name: "install python requirements"
+    type: "ShellScript"
+    target:
+      - monitor-1
+      - monitor-2
+    script: |
+      pip install -r requirements.txt
+
+  - name: "install tidb cluster"
+    type: "TiDBCluster"
+    target:
+      - tidb-1
+      - tidb-2
+      - tidb-3
+
+cleanup:
+  - name: "uninstall tidb cluster"
+    type: "TiDBCluster"
+    target:
+      - tidb-1
+      - tidb-2
+      - tidb-3
+
