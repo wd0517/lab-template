@@ -1,23 +1,40 @@
 name: "demo_001"
-description: "demo_001"
+title_en: Database Zero Downtime Under Availability Zone Failure
+title_ja: アベイラビリティゾーン障害時ダウンタイムなし
+title_zh: 可用区故障期间数据库零宕机
+description_en: This hands-on lab demonstrates how to achieve zero downtime for a database during a data center or availability zone failure. Thanks to TiDB's distributed architecture, failures at the data center or Availability Zone level don't need to trigger a server-side failover and let the database clients wait on the failover to complete. Instead, database clients can seamlessly connect to the available TiDB server instances, ensuring continuous business operations. Should such disasters occur, the application can set an operation timeout by their business requirements. Unlike traditional systems, TiDB doesn't require server-side failover to complete before the database client can reconnect.
+description_ja: この演習では、データセンターまたは可用性ゾーンの障害が発生した場合にデータベースのゼロダウンタイムを実現する方法を示します。TiDB の分散アーキテクチャのおかげで、データセンターまたは可用性ゾーンレベルの障害は、サーバーサイドのフェイルオーバーをトリガーする必要はありません。データベースクライアントはフェイルオーバーが完了するのを待つ必要がありません。代わりに、データベースクライアントは利用可能な TiDB サーバーインスタンスにシームレスに接続でき、ビジネスの連続性を確保できます。このような災害が発生した場合、アプリケーションはビジネス要件に応じて操作タイムアウトを設定できます。従来のシステムとは異なり、TiDB はデータベースクライアントが再接続する前にサーバーサイドのフェイルオーバーを完了する必要はありません。
+description_zh: 本实验演示了在数据中心或可用性区域发生故障时如何实现数据库的零宕机。由于 TiDB 的分布式架构，数据中心或可用性区域级别的故障不需要触发服务器端故障转移，并让数据库客户端等待故障转移完成。相反，数据库客户端可以无缝连接到可用的 TiDB 服务器实例，确保业务连续运行。如果发生此类灾难，应用程序可以根据其业务需求设置操作超时。与传统系统不同，TiDB 不需要在数据库客户端重新连接之前完成服务器端故障转移。
+splash_image_en: https://pingcap-edu.s3.us-west-2.amazonaws.com/quick-demo/demo_001_en.png
+splash_image_ja: https://pingcap-edu.s3.us-west-2.amazonaws.com/quick-demo/demo_001_en.png
+splash_image_zh: https://pingcap-edu.s3.us-west-2.amazonaws.com/quick-demo/demo_001_en.png
 version: "0.0.1"
 authors:
-  - Writer1
-  - Writer2
-credits_per_minute: 10
+  - author_a
+  - author_b
+# Choices: Self-Paced, Instructor-Led
+delivery_type: Self-Paced
+# Choices: TiDB Self-Managed, TiDB Cloud Serverless
+environment: TiDB Self-Managed
+target_audience:
+  - DBA
+  - Architect
+  - DevOps
 tags:
   - TiDB Serverless
   - GenAI
 regions:
-  - us-east-1
-  - us-west-2
-  - eu-central-1
-  - ap-northeast-1
-languages:
-  - en
-  - zh
-  - ja
-
+  - oregon
+  - tokyo
+  - singapore
+tidb_versions:
+  - "6.5.9"
+  - "7.5.4"
+  - "8.1.1"
+# Credits must be a positive integer
+credits: 10
+credit_redeemable: true
+employee_only: false
 
 prerequisites:
   - name: "serverless-cluster"
@@ -27,16 +44,19 @@ prerequisites:
 
 bootstrap:
   - name: "install mysql client"
+    id: install-mysql-client
     type: "ShellScript"
     target:
-      - monitor-1
-      - monitor-2
+      - monitor1
+      - monitor2
     script: |
       sudo apt-get update
       sudo apt-get install mysql-client
       sudo apt-get install mysql-client-core-8.0
 
   - name: "install python requirements"
+    depends_on:
+      - install-mysql-client
     type: "ShellScript"
     target:
       - monitor-1

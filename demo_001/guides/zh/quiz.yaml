@@ -1,0 +1,13 @@
+- question: TiDB 是什么？
+  type: single-choice
+  choices:
+    A: TiDB 是一个数据库
+    B: TiDB 不是一个数据库
+  answer: A
+
+- question: TiDB 是什么？
+  type: multiple-choice
+  choices:
+    A: TiDB 是一个数据库
+    B: TiDB 不是一个数据库
+  answer: [A, B]

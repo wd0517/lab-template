@@ -1,0 +1,13 @@
+- question: What is TiDB?
+  type: single-choice
+  choices:
+    A: TiDB is a database
+    B: TiDB is not a database
+  answer: A
+
+- question: What is TiDB?
+  type: multiple-choice
+  choices:
+    A: TiDB is a database
+    B: TiDB is not a database
+  answer: [A, B]

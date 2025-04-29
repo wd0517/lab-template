@@ -1,0 +1,13 @@
+- question: TiDBとは何ですか？
+  type: single-choice
+  choices:
+    A: TiDBはデータベースです
+    B: TiDBはデータベースではありません
+  answer: A
+
+- question: TiDBとは何ですか？
+  type: multiple-choice
+  choices:
+    A: TiDBはデータベースです
+    B: TiDBはデータベースではありません
+  answer: [A, B]

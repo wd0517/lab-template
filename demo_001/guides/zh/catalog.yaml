@@ -1,0 +1,15 @@
+- title: 概览
+  file: overview.md
+  type: markdown
+
+- title: 介绍 TiDB Vector
+  video_url: https://www.youtube.com/watch?v=_QBrPBwFoWM
+  type: video
+
+- title: 语义搜索
+  file: sematic_search.ipynb
+  type: jupter_notebook
+
+- title: 测验
+  file: quiz.yaml
+  type: quiz

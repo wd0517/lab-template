@@ -1,0 +1,15 @@
+- title: Overview
+  file: overview.md
+  type: markdown
+
+- title: Introduce TiDB Vector
+  video_url: https://www.youtube.com/watch?v=_QBrPBwFoWM
+  type: video
+
+- title: Sematic Search
+  file: sematic_search.ipynb
+  type: jupter_notebook
+
+- title: Quiz
+  file: quiz.yaml
+  type: quiz
