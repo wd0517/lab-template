@@ -1,0 +1,34 @@
+title: Quiz 1
+description: Some tips
+
+questions:
+  - type: SingleChoice
+    question: What is the capital of France?
+    options:
+      - id: 1
+        answer: Beijing
+      - id: 2
+        answer: London
+      - id: 3
+        answer: Tokyo
+      - id: 4
+        answer: Seoul
+    correct_answer: 1
+    explanation: Paris is the capital of France.
+
+  - type: MultipleChoice
+    question: What are the capitals of China?
+    options:
+      - id: 1
+        answer: Beijing
+      - id: 2
+        answer: London
+      - id: 3
+        answer: Tokyo
+      - id: 4
+        answer: Seoul
+    correct_answer:
+      - 1
+      - 2
+      - 3
+    explanation: Beijing, London, Tokyo are the capitals of China.
