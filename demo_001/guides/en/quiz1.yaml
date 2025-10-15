@@ -1,5 +1,8 @@
 title: Quiz 1
 description: Some tips
+allow_repeat_submission: true
+evaluate_immediately: true
+show_correct_answer: true
 
 questions:
   - type: SingleChoice
@@ -7,13 +10,13 @@ questions:
     options:
       - id: 1
         answer: Beijing
+        correct: true
       - id: 2
         answer: London
       - id: 3
         answer: Tokyo
       - id: 4
         answer: Seoul
-    correct_answer: 1
     explanation: Paris is the capital of France.
 
   - type: MultipleChoice
@@ -21,14 +24,16 @@ questions:
     options:
       - id: 1
         answer: Beijing
+        correct: true
       - id: 2
         answer: London
+        correct: true
       - id: 3
         answer: Tokyo
+        correct: true
       - id: 4
         answer: Seoul
-    correct_answer:
-      - 1
-      - 2
-      - 3
+        correct: true
+      - id: 5
+        answer: Moscow
     explanation: Beijing, London, Tokyo are the capitals of China.
