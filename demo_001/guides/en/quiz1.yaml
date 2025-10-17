@@ -9,31 +9,32 @@ questions:
     question: What is the capital of France?
     options:
       - id: 1
-        answer: Beijing
+        text: Beijing
+        # identify the correct answer, default value is false
         correct: true
       - id: 2
-        answer: London
+        text: London
       - id: 3
-        answer: Tokyo
+        text: Tokyo
       - id: 4
-        answer: Seoul
+        text: Seoul
     explanation: Paris is the capital of France.
 
   - type: MultipleChoice
     question: What are the capitals of China?
     options:
       - id: 1
-        answer: Beijing
+        text: Beijing
         correct: true
       - id: 2
-        answer: London
+        text: London
         correct: true
       - id: 3
-        answer: Tokyo
+        text: Tokyo
         correct: true
       - id: 4
-        answer: Seoul
+        text: Seoul
         correct: true
       - id: 5
-        answer: Moscow
+        text: Moscow
     explanation: Beijing, London, Tokyo are the capitals of China.
